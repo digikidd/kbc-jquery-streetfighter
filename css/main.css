@@ -1,0 +1,19 @@
+body {
+	background-color: black;
+}
+
+/* class for the main section at the beginning of the body */
+.game-area {
+	background-color: white;
+	min-width: 1200px;
+	min-height: 500px;
+	margin-top: 125px;
+	position: relative;
+	
+}
+
+
+.ryu-ready {
+	background-image: url('/images/ryu-ready-position.gif');
+	
+}
