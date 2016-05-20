@@ -1,8 +1,17 @@
+/* 	We should make a pixel ruler app or plugin for sublime.
+	
+	Is there a method you have for remembering how to terminate
+	jquery calls properly??
+
+ */
+
+
+
 
 /* I LOVE THIS TRICK!! */
-* {
+/* * {
   outline: red 1px solid;
-}
+} */
 
 body {
 	background-color: black;
@@ -46,6 +55,8 @@ body {
 /* Here are the images for the Ryu DIV tags. */
 .ryu-ready {
 	background-image: url('../images/ryu-ready-position.gif');
+	/* THIS IS NOT WORKING??!!
+	filter: hue-rotate(90deg); */
 }
 .ryu-still {
 	background-image: url('../images/ryu-standing-still.png');
@@ -56,6 +67,7 @@ body {
 }
 .ryu-cool {
 	background-image: url('../images/ryu-cool.gif');
+	display: block;
 }
 
 /* Giving the Ryu images same sizing */
@@ -71,20 +83,21 @@ body {
 
 
 /* Making sure images stay contained .*/
-.hadouken, .ryu-ready, .ryu-still, .ryu-throwing {
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool{
   background-repeat: no-repeat;
 }
 
 .hadouken {
 	background-image: url('../images/hadouken.gif');
-	display: none;
 	width: 156px;
     height: 90px;
+/* WHEN I TRIED SETTING THIS TO ABSOLUTE IT DID NOT WORK */
     position: relative;
     top: 167px;
     left: -212px;
     z-index: 10;
     float: left;
+    display: none;
 }
 
 .text-container {
@@ -114,3 +127,11 @@ body {
 .game-rules p + p {
 	margin-left: 275px;
 }
+
+.hulk-ryu {
+	filter: hue-rotate(90deg);
+}
+
+
+
+
