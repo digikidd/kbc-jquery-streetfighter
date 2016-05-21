@@ -1,41 +1,39 @@
+//Is there a simpler way to script anything I have here?
+//
+//How can I improve my workflow?
+//
+//What would you do differently?
+//
+//What if I coded this so if an event is running, other events would be unavailable?
+//
+//For example, right now you can press the x key while the intro is playing.
 $(document).ready(function(){
-
-// USE THIS TO FADE IN OPEING IMAGES??
-
-// $( "#clickme" ).click(function() {
-//   $( "#book" ).animate({
-//     opacity: 0.25,
-//     left: "+=50",
-//     height: "toggle"
-//   }, 5000, function() {
-//     // Animation complete.
-//   });
-// });
-
-// I DID NOT USE THIS FOR MY AUDIO.
-// function playHadouken() {
-//     $('#hadouken-sound')[0].volume = 0.5;
-//     $('#hadouken-sound')[0].load();
-//     $('#hadouken-sound')[0].play();
-// }
-
-// $(document).keypress(function(e) {
-//     if(e.which == 88) {
-//     	alert();
-//     }
-// });
-
-
 //Creating and loading variables with audio.
 var	hadouken = $("#hadouken-audio");
 var sf_theme = $("#sf-theme");
 var ryu_cool = $("#ryu-audio");
+// This load function plays the opening theme music and handles animations for
+// logo/game images.
+$(window).load(function() {
+	sf_theme.load();
+	sf_theme.trigger('play');
+	$(".sf-logo").show();
+  	$(".sf-logo").animate({
+    opacity: 0.0,
+  	}, 8000, function() {
+  		$(".sf-logo").hide();
+  		$(".jquery-logo").show();
+  			$(".jquery-logo").animate({
+    	opacity: 0.0,
+  		}, 8000, function() {
+  			$(".jquery-logo").hide();
+  			$(".game-rules").show();
+  	});
+  		});
+  	sf_theme.animate ({volume: 0}, 17000);
+});
 
-
-// THIS DOES NOT WORK AND HOW DO YOU MAKE AUDIO PLAY WHEN PAGE LOADS??
-// $("#sf-theme").get(0).play();
-
-
+//The  next 2 functions handle the x key pressing and releasing.
 $(document).on( "keydown", function(e) {
 	if(e.which == 88) {
     	$(".ryu-still").hide();
@@ -43,18 +41,16 @@ $(document).on( "keydown", function(e) {
 	 	$(".ryu-throwing").hide();
 	 	$(".hadouken").hide();
 	 	$(".ryu-cool").show();
+	 	sf_theme.trigger('pause');
 	 	ryu_cool.trigger('play');
 	 }
 	 	else{}
     });
-
 $(document).on( "keyup", function(e) {
 	 	$(".ryu-cool").hide();
 	 	$(".ryu-still").show();
 	 	ryu_cool.load();
     });
-
-
 
 // 	This swaps the ryu images when the mouse enters and leaves
 // 	the ryu-container div element.
@@ -87,10 +83,8 @@ $(".ryu-ready").mousedown(function(){
 	      	$(this).css('left', '-212px');
 	    }
   	);
+  	sf_theme.trigger('pause');
 	hadouken.trigger('play');
-//	THIS DID NOT WORK???
-// 	document.getElementById("hadouken");
-//	hadouken.play();
 });
 
 $(".ryu-container").mouseup(function() {
@@ -98,12 +92,5 @@ $(".ryu-container").mouseup(function() {
 	$(".ryu-ready").hide();
 	$(".ryu-throwing").hide();
 	$(".hadouken").hide();
-
-//	THIS PAUSES THE AUDIO BUT DOES NOT RESET THE AUDIO???
-//	hadouken.trigger('pause');
-//	hadouken.currentTime=0;
-
 });
-
-
 });

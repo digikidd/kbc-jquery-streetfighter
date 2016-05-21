@@ -7,7 +7,6 @@
 
 
 
-
 /* I LOVE THIS TRICK!! */
 /* * {
   outline: red 1px solid;
@@ -21,18 +20,21 @@ body {
 	background-image: url('../images/SF_Logo.png');
 	background-size: 600px;
 	width: 600px;
-	height: 600px;
+	height: 317px;
 	background-repeat: no-repeat;
-	display: none;
+	z-index: 2;
+	display: block;
 }
 
 .jquery-logo {
 	background-image: url('../images/jquery_Logo.png');
 	background-size: 600px;
 	width: 600px;
-	height: 600px;
+	height: 317px;
 	background-repeat: no-repeat;
 	margin-top: 15%;
+	z-index: 2;
+	display: block;
 	display: none;
 }
 
@@ -47,11 +49,9 @@ body {
 	z-index: 1;
 	
 }
-
 .ryu-container, .ryu {
     float: left;
 }
-
 /* Here are the images for the Ryu DIV tags. */
 .ryu-ready {
 	background-image: url('../images/ryu-ready-position.gif');
@@ -69,24 +69,19 @@ body {
 	background-image: url('../images/ryu-cool.gif');
 	display: block;
 }
-
 /* Giving the Ryu images same sizing */
 .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
 	width: 659px;
 	height: 494px;
 }
-
 /* This will keep images hidden in default state. */
 .ryu-ready, .ryu-throwing, .ryu-cool {
 	display: none;
 }
-
-
 /* Making sure images stay contained .*/
 .hadouken, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool{
   background-repeat: no-repeat;
 }
-
 .hadouken {
 	background-image: url('../images/hadouken.gif');
 	width: 156px;
@@ -99,26 +94,32 @@ body {
     float: left;
     display: none;
 }
-
 .text-container {
 	position: absolute;
     left: 650px;
     height: 425px;
     width: 600px;
     padding-top: 75px;
-
 }
-
+#jquery-text {
+	display: block;
+	color: steelblue;
+    font-family: 'Carter One', cursive;
+    font-size: 14px;
+    text-align: center;
+    padding-left: 198px;
+}
 .game-rules {
 	display: block;
-	color: red;
+	color: darkred;
     font-family: 'Carter One', cursive;
     font-size: 50px;
     width: 600px;
+    display: none;
 }
 .game-rules p {
     width: 50%;
-    color: black;
+/*     color: black; */
     font-size: 28px;
     line-height: 45px;
 }
@@ -127,11 +128,3 @@ body {
 .game-rules p + p {
 	margin-left: 275px;
 }
-
-.hulk-ryu {
-	filter: hue-rotate(90deg);
-}
-
-
-
-
