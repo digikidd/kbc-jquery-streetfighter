@@ -6,6 +6,7 @@
 //
 //What if I coded this so if an event is running, other events would be unavailable?
 //
+//
 //For example, right now you can press the x key while the intro is playing.
 $(document).ready(function(){
 //Creating and loading variables with audio.
