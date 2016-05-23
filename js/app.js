@@ -15,24 +15,24 @@ var sf_theme = $("#sf-theme");
 var ryu_cool = $("#ryu-audio");
 // This load function plays the opening theme music and handles animations for
 // logo/game images.
-$(window).load(function() {
-	sf_theme.load();
-	sf_theme.trigger('play');
-	$(".sf-logo").show();
-  	$(".sf-logo").animate({
-    opacity: 0.0,
-  	}, 8000, function() {
-  		$(".sf-logo").hide();
-  		$(".jquery-logo").show();
-  			$(".jquery-logo").animate({
-    	opacity: 0.0,
-  		}, 8000, function() {
-  			$(".jquery-logo").hide();
-  			$(".game-rules").show();
-  	});
-  		});
-  	sf_theme.animate ({volume: 0}, 17000);
-});
+// $(window).load(function() {
+// 	sf_theme.load();
+// 	sf_theme.trigger('play');
+// 	$(".sf-logo").show();
+//   	$(".sf-logo").animate({
+//     opacity: 0.0,
+//   	}, 8000, function() {
+//   		$(".sf-logo").hide();
+//   		$(".jquery-logo").show();
+//   			$(".jquery-logo").animate({
+//     	opacity: 0.0,
+//   		}, 8000, function() {
+//   			$(".jquery-logo").hide();
+//   			$(".game-rules").show();
+//   	});
+//   		});
+//   	sf_theme.animate ({volume: 0}, 17000);
+// });
 
 //The  next 2 functions handle the x key pressing and releasing.
 $(document).on( "keydown", function(e) {
@@ -55,7 +55,7 @@ $(document).on( "keyup", function(e) {
 
 // 	This swaps the ryu images when the mouse enters and leaves
 // 	the ryu-container div element.
-$(".ryu-container").mouseenter(function() {
+$(".ryu-container").hover(function() {
 	$(".ryu-still").hide();
 	$(".ryu-ready").show();
 
