@@ -8,16 +8,16 @@
 
 
 /* I LOVE THIS TRICK!! */
-/* * {
+* {
   outline: red 1px solid;
-} */
+}
 
 body {
 	background-color: black;
 }
 
 .sf-logo {
-	background-image: url('../images/SF_Logo.png');
+	background-image: url('../images/SF_logo.png');
 	background-size: 600px;
 	width: 600px;
 	height: 317px;
@@ -27,7 +27,7 @@ body {
 }
 
 .jquery-logo {
-	background-image: url('../images/jquery_Logo.png');
+	background-image: url('../images/jquery_logo.png');
 	background-size: 600px;
 	width: 600px;
 	height: 317px;
