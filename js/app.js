@@ -1,18 +1,10 @@
-//Is there a simpler way to script anything I have here?
-//
-//How can I improve my workflow?
-//
-//What would you do differently?
-//
-//What if I coded this so if an event is running, other events would be unavailable?
-//
-//
-//For example, right now you can press the x key while the intro is playing.
+
 $(document).ready(function() {
     //Creating and loading variables with audio.
     var hadouken = $("#hadouken-audio");
     var sf_theme = $("#sf-theme");
     var ryu_cool = $("#ryu-audio");
+    var isKey = null;
     // This load function plays the opening theme music and handles animations for
     // logo/game images.
     $(window).load(function() {
@@ -35,8 +27,8 @@ $(document).ready(function() {
     });
 
     //The  next 2 functions handle the x key pressing and releasing.
-    $(document).on("keydown", function(e) {
-        if (e.which == 88) {
+    $(document).on("keypress", function(e) {
+        if (e.which == 120) {
             $(".ryu-still").hide();
             $(".ryu-ready").hide();
             $(".ryu-throwing").hide();
@@ -44,10 +36,14 @@ $(document).ready(function() {
             $(".ryu-cool").show();
             sf_theme.trigger('pause');
             ryu_cool.trigger('play');
-        } else {}
+        } 
+
     });
+
     $(document).on("keyup", function(e) {
         $(".ryu-cool").hide();
+        $(".ryu-throwing").hide();
+        $(".ryu-ready").hide();
         $(".ryu-still").show();
         ryu_cool.load();
     });
@@ -60,10 +56,10 @@ $(document).ready(function() {
 
         })
         .mouseleave(function() {
-            $(".ryu-still").show();
             $(".ryu-ready").hide();
             $(".ryu-throwing").hide();
-            // $(".hadouken").hide();
+            $(".ryu-still").show();
+            $(".hadouken").hide();
         });
 
     // This starts the hadouken throw animation.
@@ -77,12 +73,12 @@ $(document).ready(function() {
                 //1.325 seconds which is timed to the hadouken audio.
                 1325,
                 function() {
-                    //CAN WE PLEASE DISCUSS (THIS) IN MORE DETAIL???
                     $(this).hide();
                     $(this).css('left', '-212px');
                 }
             );
         sf_theme.trigger('pause');
+        hadouken.load();
         hadouken.trigger('play');
     });
 
@@ -91,5 +87,6 @@ $(document).ready(function() {
         $(".ryu-ready").show();
         $(".ryu-throwing").hide();
         $(".hadouken").hide();
+        hadouken.trigger("pause");
     });
 });

@@ -1,16 +1,7 @@
-/* 	We should make a pixel ruler app or plugin for sublime.
-	
-	Is there a method you have for remembering how to terminate
-	jquery calls properly??
 
- */
-
-
-/* I LOVE THIS TRICK!! */
-
-* {
+/* * {
     outline: red 1px solid;
-}
+} */
 
 body {
     background-color: black;
@@ -72,6 +63,7 @@ body {
 
 .ryu-throwing {
     background-image: url('../images/ryu-throwing-hadouken.png');
+    display: block;
 }
 
 .ryu-cool {
@@ -84,12 +76,18 @@ body {
 
 .ryu-ready,
 .ryu-still,
-.ryu-throwing,
+/* .ryu-throwing, */
 .ryu-cool {
     width: 659px;
     height: 494px;
 }
 
+
+.ryu-throwing {
+	width: 545px;
+	height: 494px;
+
+}
 
 /* This will keep images hidden in default state. */
 
