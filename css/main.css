@@ -76,17 +76,10 @@ body {
 
 .ryu-ready,
 .ryu-still,
-/* .ryu-throwing, */
+.ryu-throwing,
 .ryu-cool {
     width: 659px;
     height: 494px;
-}
-
-
-.ryu-throwing {
-	width: 545px;
-	height: 494px;
-
 }
 
 /* This will keep images hidden in default state. */

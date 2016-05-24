@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     //Creating and loading variables with audio.
     var hadouken = $("#hadouken-audio");
@@ -36,7 +35,13 @@ $(document).ready(function() {
             $(".ryu-cool").show();
             sf_theme.trigger('pause');
             ryu_cool.trigger('play');
-        } 
+        } else {
+            $(".ryu-still").show();
+            $(".ryu-ready").hide();
+            $(".ryu-throwing").hide();
+            $(".hadouken").hide();
+            $(".ryu-cool").hide();
+        }
 
     });
 
