@@ -45,7 +45,7 @@ $(document).ready(function() {
 
     });
 
-    $(document).on("keyup", function(e) {
+    $(document).on("keyup", function() {
         $(".ryu-cool").hide();
         $(".ryu-throwing").hide();
         $(".ryu-ready").hide();
@@ -57,6 +57,7 @@ $(document).ready(function() {
     // 	the ryu-container div element.
     $(".ryu-container").hover(function() {
             $(".ryu-still").hide();
+            $(".ryu-throwing").hide();
             $(".ryu-ready").show();
 
         })
